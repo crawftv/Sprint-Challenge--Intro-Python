@@ -13,17 +13,14 @@ import csv
 #
 class City:
     def __init__(
-        self, city: str, state: str, county: str, lat: str, lon: str, founding_year: str
-    ):
-        self.city = city
-        self.state = state
-        self.county = county
+            self, city: str, lat: str, lon: str): 
+
+        self.name = city
         self.lat = float(lat)
         self.lon = float(lon)
-        self.founding_year = int(founding_year)
 
     def __repr__(self):
-        return f"{self.city,self.lat,self.lon}"
+        return f"{self.name,self.lat,self.lon}"
 
 
 # Store the instances in the "cities" list, below.
@@ -44,7 +41,7 @@ def cityreader(cities=[]):
             if count == 0:
                 pass
             else:
-                cities.append(City(row[0], row[1], row[2], row[3], row[4], row[6]))
+                cities.append(City(row[0],   row[3], row[4])) 
             count += 1
     return cities
 
